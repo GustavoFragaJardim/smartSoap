@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SmartSoap</title>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCXKBTFR0mF0JlPrjWNqGhrUlmQRLSeHr8",
+            authDomain: "smartsoap-9d715.firebaseapp.com",
+            databaseURL: "https://smartsoap-9d715.firebaseio.com",
+            projectId: "smartsoap-9d715",
+            storageBucket: "smartsoap-9d715.appspot.com",
+            messagingSenderId: "1028795641865"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Uma máquina de fabricar sabão e salvar o mundo">
+    <meta name="author" content="Gustavo Fraga Jardim">
+    <title>SmartSoap</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/all.min.css" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body ng-app="app" ng-controller="indexCtrl">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand " href="#page-top">SmartSoap</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="#services">Como pensamos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#portfolio">Por que fazemos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#about">Como fazer seu sabão</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#team">Quem somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#contact">Reserve a sua</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading text-uppercase">SmartSoap</div>
+                <a class="btn btn-primary btn-xl text-uppercase yellow-buttom" href="#services">Cadastre-se na pré-venda</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Como pensamos</h2>
+                    <h3 class="section-subheading text-muted">Um mundo melhor para pessoas melhores</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Pequena escala</h4>
+                    <p class="text-muted">Produzimos sob demanda para gastar o mínimo de recurso possível</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Sistema interligado</h4>
+                    <p class="text-muted">Programar sua SmartSoap pelo seu celular</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-tree fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Ajudar o meio ambiente</h4>
+                    <p class="text-muted">Podemos mudar o mundo com pequenas atitudes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Por que fazemos</h2>
+                    <h3 class="section-subheading text-muted">A causa de nos mantermos</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                Quando descartado no lixo comum, o óleo acaba infiltrando-se. Tedno a capacidade de formar uma camada impermeável no solo,
+                                impedindo que a água da chuva consiga infiltrar-se, aumentando a o risco de enchentes.
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/soil-pollution.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Poluição do solo</h4>
+                        <p class="text-muted">O óleo quando em contato com solo, pode impermeabilizá-lo, impedindo a infiltração da água ou penetrar
+                            até o lençol freático, contaminando-o</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                O óleo de cozinha possui uma densidade inferior à da água. Assim, quando os dois estão misturados, o óleo posiciona-se sobre
+                                a água, formando uma película capaz de causar problemas ambientais graves.
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/wather-pollution.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Poluição da água</h4>
+                        <p class="text-muted">A camada de óleo sobre a água prejudica a entrada de luz e de gás oxigênio. Dessa forma, os peixes
+                            passam a ter uma oferta menor de oxigênio disponível, o que pode causar a morte desses seres.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                Metano absorve comprimentos de onda mais curtos, o que leva ao aquecimento. Este calor é mais mantido ou refletido de volta
+                                para a terra, por nuvens </div>
+                        </div>
+                        <img class="img-fluid" src="img/globa-warming.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Aquecimento Global</h4>
+                        <p class="text-muted">Quando bactérias realizam a decomposição do óleo, um dos produtos dessa reação é o gás metano. O
+                            problema é que o gás metano, juntamente ao gás carbônico, contribui para o aquecimento do planeta.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                É muito comum presenciarmos alagamentos nas ruas em virtude do transbordamento do esgoto. Como toda a água que utilizamos
+                                em casa vai para a rede de esgoto, com a obstrução, o esgoto acumula-se, o que causa o transbordamento.
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/clog-pipe.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Entupimentos</h4>
+                        <p class="text-muted">Quando o óleo é descartado na pia ele acaba aderindo-se às paredes e retendo partículas sólidas diversas.
+                            Parte do óleo aderido acaba transformando-se em gordura o que pode obstruir a passagem de água,
+                            causando alagamentos no interior das residências e também nas ruas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                Um litro de óleo de cozinha pode poluir certa de 10.000 litros de água, mas algumas estimativas dizem que um litro de óleo
+                                pode poluir até um milhão de litros de água </div>
+                        </div>
+                        <img class="img-fluid" src="img/wather.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Encarece o tratamento da água</h4>
+                        <p class="text-muted">A poluição pelo óleo faz encarecer o tratamento da água (até 45%), além de agravar o efeito estufa,
+                            já que o contato da água poluída pelo óleo ao desembocar no mar gera uma reação química que libera
+                            gás metano, um componente muito mais agressivo que o gás carbônico.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">Como fazer seu sabão</h2>
+                    <h3 class="section-subheading text-muted">Existem milhares de receitas para fazer, separamos algumas</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <i class="fas fa-flask fa-6x pt-4"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>#1</h4>
+                                    <h4 class="subheading">Coloque os ingredientes na máquina</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Existem várias receitas culturais, algumas utilizam apenas soda cáustica, outras utilizam
+                                        detergente, sabão em pó e até bicarbonato de sódio</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <i class="fas fa-blender fa-6x pt-4"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>#2</h4>
+                                    <h4 class="subheading">Coloque o óleo de cozinha</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Coloque o óleo de cozinha no compartimento sobre a peneira</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <i class="fas fa-hourglass-start fa-6x pt-4"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>#3</h4>
+                                    <h4 class="subheading">Ligue sua SmartSoap</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Aguarde 40 minutos</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Está
+                                    <br>pronto
+                                    <br>seu sabão!</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Nosso Time</h2>
+                    <h3 class="section-subheading text-muted">Eles se esforçaram muito para melhorar o mundo</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="">
+                        <h4>Gustavo Fraga</h4>
+                        <p class="text-muted">Co-Founder</p>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/gustavo.fragajardim">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="http://www.linkedin.com/in/gustavofraga">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="">
+                        <h4>Iasmin Evelyn</h4>
+                        <p class="text-muted">Co-Founder</p>
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/iasminEGR?fb_dtsg_ag=Adyj_ke2Rbu0pOGOzrCfj7Kr9Tae-hL6OchVk6GWmuUEjw%3AAdwnQDP7_-Q6akFhYs3kkbe5Qn0tjJoVM7AL6xF8ajh0Gw">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/in/iasmin-rocha-808198a8/">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted"></p>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Reserve a sua</h2>
+                    <h3 class="section-subheading text-muted">Preencha os campos para reservar a sua SmartSoap</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="name" ng-model="name" type="text" placeholder="Seu Nome *" required="required" data-validation-required-message="Por favor digite seu Nome.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="email" ng-model="email" type="email" placeholder="Seu Email *" required="required" data-validation-required-message="Por favor digite Seu endereço de E-mail.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" id="phone" ng-model='phone' type="tel" placeholder="Seu telefone *" required="required" data-validation-required-message="Por favor digite seu número de telefone.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" id="message" ng-model='message' placeholder="Seu Menssage *" required="required" data-validation-required-message="Por favor digite a menssage."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button id="sendMessageButton" class="btn btn-primary btn-xl text-uppercase" type="submit">Enviar Mensagem</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; SmartSoap</span>
+                </div>
+                <!-- <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
